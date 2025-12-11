@@ -108,32 +108,18 @@ const baseAnimatedCard = `
   }
 `;
 
-// 21 DEC - animates first (delay 1s, rotate left)
-const AnimatedCard1 = styled.div`
-  ${baseAnimatedCard}
-  z-index: 40;
-  animation: ${slideOutLeft} 0.75s ${easeOutCubic} 1s forwards;
-`;
-
-// 28 DEC - animates second (delay 1.5s, rotate right)
-const AnimatedCard2 = styled.div`
-  ${baseAnimatedCard}
-  z-index: 30;
-  animation: ${slideOutRight} 0.75s ${easeOutCubic} 1.5s forwards;
-`;
-
-// 4 JAN - animates third (delay 2s, rotate left)
-const AnimatedCard3 = styled.div`
+// Card 16 - first to animate out (z-index 20, delay 1s)
+const AnimatedCard16 = styled.div`
   ${baseAnimatedCard}
   z-index: 20;
-  animation: ${slideOutLeft} 0.75s ${easeOutCubic} 2s forwards;
+  animation: ${slideOutLeft} 0.5s ${easeOutCubic} 1s forwards;
 `;
 
-// 11 JAN - animates fourth (delay 2.5s, rotate right)
-const AnimatedCard4 = styled.div`
+// Card 17 - second to animate out (z-index 10, delay 1.5s)
+const AnimatedCard17 = styled.div`
   ${baseAnimatedCard}
   z-index: 10;
-  animation: ${slideOutRight} 0.75s ${easeOutCubic} 2.5s forwards;
+  animation: ${slideOutRight} 0.5s ${easeOutCubic} 1.5s forwards;
 `;
 
 export const Maple = () => {
@@ -141,73 +127,45 @@ export const Maple = () => {
     return (
       <Container>
         <CalendarCard>
-          {/* Base card - 18 JAN (stays visible) */}
+          {/* Base card - 18 (stays visible) */}
           <CardInner>
             <Header>
               <Dot />
               <Dot />
             </Header>
             <Body>
-              <DateNumber>18</DateNumber>
-              <MonthLabel>JAN</MonthLabel>
+              <DateNumber>24</DateNumber>
+              <MonthLabel>DAYS</MonthLabel>
             </Body>
           </CardInner>
 
-          {/* 21 DEC - animates first */}
-          <AnimatedCard1>
+          {/* Card 16 - animates out first */}
+          <AnimatedCard16>
             <CardInner>
               <Header>
                 <Dot />
                 <Dot />
               </Header>
               <Body>
-                <DateNumber>21</DateNumber>
-                <MonthLabel>DEC</MonthLabel>
+                <DateNumber>26</DateNumber>
+                <MonthLabel>DAYS</MonthLabel>
               </Body>
             </CardInner>
-          </AnimatedCard1>
+          </AnimatedCard16>
 
-          {/* 28 DEC - animates second */}
-          <AnimatedCard2>
+          {/* Card 17 - animates out second */}
+          <AnimatedCard17>
             <CardInner>
               <Header>
                 <Dot />
                 <Dot />
               </Header>
               <Body>
-                <DateNumber>28</DateNumber>
-                <MonthLabel>DEC</MonthLabel>
+                <DateNumber>25</DateNumber>
+                <MonthLabel>DAYS</MonthLabel>
               </Body>
             </CardInner>
-          </AnimatedCard2>
-
-          {/* 4 JAN - animates third */}
-          <AnimatedCard3>
-            <CardInner>
-              <Header>
-                <Dot />
-                <Dot />
-              </Header>
-              <Body>
-                <DateNumber>4</DateNumber>
-                <MonthLabel>JAN</MonthLabel>
-              </Body>
-            </CardInner>
-          </AnimatedCard3>
-
-          {/* 11 JAN - animates fourth */}
-          <AnimatedCard4>
-            <CardInner>
-              <Header>
-                <Dot />
-                <Dot />
-              </Header>
-              <Body>
-                <DateNumber>11</DateNumber>
-                <MonthLabel>JAN</MonthLabel>
-              </Body>
-            </CardInner>
-          </AnimatedCard4>
+          </AnimatedCard17>
         </CalendarCard>
       </Container>
     );
